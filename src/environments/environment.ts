@@ -7,4 +7,4 @@ export const environment = {
   production: false
 };
 
-export const HERO_URL = `http://localhost:8080/SpringSampleREST/hero`;
+export const HERO_URL = `http://localhost:8088/project2MovieAPI/movie`;
