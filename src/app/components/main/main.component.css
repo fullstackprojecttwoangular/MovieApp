@@ -1,0 +1,16 @@
+#addPadding {
+  min-height: 700px;
+  max-height: 700px;
+}
+#mTitle {
+  max-width: 390px;
+}
+#release_date {
+  font-size: 20px;
+}
+img {
+  min-width: 300px;
+  max-width: 300px;
+  min-height: 450px;
+  max-height: 450px;
+}
