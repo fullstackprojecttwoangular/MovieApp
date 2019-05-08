@@ -1,0 +1,85 @@
+/* You can add global styles to this file, and also import other style files */
+nav{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background-color: #696969;
+    font-family: 'Roboto Slab', serif;
+}
+
+.Logo{
+    text-transform: capitalize;
+    letter-spacing: 5px;
+    font-size: 15px;
+}
+
+.navbar-links{
+    display: flex;
+    justify-content: space-around;
+    width: 45%;
+
+
+}
+
+.navbar-links a{
+
+    color:white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.navbar-links li{
+    list-style: none;
+}
+
+.logs div{
+    width: 20px;
+    height: 5px;
+    color: white;
+    margin: 5px;
+}
+
+.logs li{
+    list-style: none;
+}
+
+.logs a{
+    color:white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 12px;
+}
+body{
+    margin:0;
+    padding:0;
+    background: url(theatre.jpg)no-repeat;
+    background-size: cover;
+}
+.login-box{
+    width:200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color:white;
+    background: none;
+}
+
+.login-box h4{
+
+    float: left;
+    font-size: 25px;
+    border-bottom: 1px solid white;
+    margin-bottom: 25px;
+    padding: 13px 0;
+    background: none;
+
+}
+
+.bt{
+    background: none;
+}
