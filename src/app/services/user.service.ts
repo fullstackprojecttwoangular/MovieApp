@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/Rx';
 import { Users } from '../models/users.model';
@@ -19,14 +18,6 @@ export class UserService {
     return this.http.post<boolean>(this.regURL, user);
    }
    
-//: Observable<Users>
-  //  public findUser(user: Users) {
-  //     return this.http
-  //               .post(`${USERS_URL}/findUser`, user)
-  //               //.catch(this.handleError);
-  //  }
-  //  private handleError(error: Response) {
-  //   return Observable.throw(error.statusText);
-  // }
+
 
 }

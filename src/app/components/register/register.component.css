@@ -3,7 +3,7 @@
     padding-top: 6%;
     width: 60%;
     text-align: center;
-    color: white;
+   
 }
 #movreg{
     margin-left: 18%;
@@ -14,3 +14,6 @@
     opacity: 90%;
     background-repeat: no-repeat;
 }
+h2{
+    color: white;
+} 

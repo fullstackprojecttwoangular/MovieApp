@@ -4,10 +4,10 @@
     <input type="text" name="username" placeholder="ENTER USERNAME" id="username"/>
       <br/>
       <br/>
-    <input type="text" name="password" placeholder="ENTER PASSWORD" id="password"/>
+    <input type="password" name="password" placeholder="ENTER PASSWORD" id="password"/>
       <br/>
       <br/>
-    <button class="btn btn-info">CREATE USER</button>
+    <button class="btn btn-info" (click)="add(username.value,password.value)">CREATE USER</button>
       <br/>
       <br/>
       <br/>

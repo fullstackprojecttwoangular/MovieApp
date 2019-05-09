@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Users } from '../../models/users.model';
 import { UserService } from '../../services/user.service';
 
 
@@ -10,9 +9,24 @@ import { UserService } from '../../services/user.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService) { 
+
+  }
 
   ngOnInit() {
   }
 
+  
+  oops: string = "SOMETHING WENT WRONG";
+
+  add(username: string, password: string): void {
+    if(username == "" || password == ""){
+      return;
+    }
+    let user = {username: username, password: password}
+
+    this.userService.registerUser(user).subscribe((response) => {
+     
+    });
+  }
 }
