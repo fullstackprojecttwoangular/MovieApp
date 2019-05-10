@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'; 
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,8 @@ import { TrendingComponent } from './components/trending/trending.component';
 import { UpcomingComponent } from './components/upcoming/upcoming.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UsersService } from './services/users.service';
+import { CustomInterceptor } from './session/custom-interceptor.session';
+
 
 @NgModule({
   declarations: [
@@ -25,9 +28,14 @@ import { UsersService } from './services/users.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [UsersService,{
+    provide: HTTP_INTERCEPTORS,
+    useClass: CustomInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
