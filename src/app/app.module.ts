@@ -9,6 +9,8 @@ import { NavComponent } from './components/nav/nav.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { TrendingComponent } from './components/trending/trending.component';
 import { UpcomingComponent } from './components/upcoming/upcoming.component';
+import { RegisterComponent } from './components/register/register.component';
+import { UsersService } from './services/users.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { UpcomingComponent } from './components/upcoming/upcoming.component';
     NavComponent,
     FavoriteComponent,
     TrendingComponent,
-    UpcomingComponent
+    UpcomingComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
