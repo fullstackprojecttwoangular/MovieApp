@@ -1,15 +1,18 @@
-<div>
+<div id="register">
     <div class="panel-heading">
-        <span class="label label-default label-center">{{title}}</span>
+        <!--<span class="label label-default label-center">{{title}}</span>-->
+        <h1>REGISTER A NEW USER</h1>
     </div>
-    <div class="panel-body">
+    <div id="regbody" class="panel-body">
     <div class="list-group">
         <div class="list-group-item list-group-item-demo">
                <div class="form-group">
+                 <br><br>
                     <input [(ngModel)]="users.username" placeholder="PlEASE ENTER USERNAME" class="form-control" />
+                    <br>
                     <input [(ngModel)]="users.password" placeholder="PLEASE ENTER PASSWORD" 
                     type="password" class="form-control" />
-                    
+                    <br><br><br>
                </div>
                <div>
                    <button class="btn btn-primary btn-center" (click)="registerUser()">Submit</button>
@@ -18,5 +21,4 @@
         </div>
     </div>
 </div>
-<div class="panel-footer">
-</div>
+
