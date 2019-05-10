@@ -4,8 +4,18 @@
 </div>
 <div id="home" class="container">
   <h1 id="title" class="text-muted text-center mb-3">Now Playing</h1>
-  <br>
+
+  
   <div class="row text-center">
+
+<form action="/action_page.php">
+ <h2>Search Movie By Name:</h2>
+  <input type="text" (keyup.enter)="searchMovie()">
+  <br>
+
+
+</form>
+<br>
     <div id="nowPlayingContainer" *ngFor="let movie of movieArr">
         <div id="addPadding" class="col-lg3 col-md-4 col-sm-4">
         <img
@@ -31,5 +41,5 @@
   </div>
 </div>
 <footer class="text-center">
-  <h3>&copy;  Wolf Pack 2019</h3>
+  <h3>&copy; Java EE  March 4 2019</h3>
 </footer>

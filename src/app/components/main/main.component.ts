@@ -24,4 +24,9 @@ export class MainComponent implements OnInit {
     })
     .catch((e)=>console.log(e));
   }
-}
+
+  searchMovie() {
+
+  }
+  
+ }
