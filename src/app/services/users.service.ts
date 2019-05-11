@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
-import { HttpClient } from '@angular/common/http';
-import 'rxjs/Rx';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import 'rxjs/add/operator/map';
 import { Users } from '../models/users';
+
+import { UserLog } from '../models/user-log.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +14,29 @@ export class UsersService {
   constructor(private http: HttpClient) { 
 
   }
-  
+  try: string = "http://localhost:8088/Project2MovieAPI/findUser";
   public registerUser(users: Users){
     return this.http
             .post("http://localhost:8088/Project2MovieAPI/register", users);
   }
+
+ 
+  public login(username:string, password:string){
+
+    let headers = new HttpHeaders().set("Content Type", "x-www-application-form-urlencoded");
+    let body = new HttpParams().set("username", username).set("password", password);
+
+    return this.http.post("http://localhost:8088/Project2MovieAPI/findUser", body, {headers:headers});
+  }
+
+  // tryLogin (UserLog: UserLog): Observable<Users> { 
+  //   return this.http.post<Users>(this.try, UserLog );
+  // }
+
+  // public login(users: Users): Observable<Users>{
+  //   return this.http
+  //           .post("http://localhost:8088/Project2MovieAPI/findUser", users)
+  //           ;
+  // }
 
 }

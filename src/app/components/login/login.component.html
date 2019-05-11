@@ -1,0 +1,23 @@
+<div id="login">
+  <div class="panel-heading">
+      
+      <h1>PLEASE SIGN IN</h1>
+  </div>
+  <div id="logbody" class="panel-body">
+  <div class="list-group">
+      <div class="list-group-item list-group-item-demo">
+             <div class="form-group">
+               <br><br>
+                  <input [(ngModel)]="users.username" placeholder="PlEASE ENTER USERNAME" class="form-control" />
+                  <br>
+                  <input [(ngModel)]="users.password" placeholder="PLEASE ENTER PASSWORD" 
+                  type="password" class="form-control" />
+                  <br><br><br>
+             </div>
+             <div>
+                 <button class="btn btn-primary btn-center" (click)="login()">Login</button>
+             </div>
+             
+      </div>
+  </div>
+</div>

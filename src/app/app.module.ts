@@ -13,6 +13,7 @@ import { UpcomingComponent } from './components/upcoming/upcoming.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UsersService } from './services/users.service';
 import { CustomInterceptor } from './session/custom-interceptor.session';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -23,13 +24,14 @@ import { CustomInterceptor } from './session/custom-interceptor.session';
     FavoriteComponent,
     TrendingComponent,
     UpcomingComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule  
   ],
   providers: [UsersService,{
     provide: HTTP_INTERCEPTORS,
