@@ -5,6 +5,7 @@ import { FavoriteComponent } from './components/favorite/favorite.component';
 import { TrendingComponent } from './components/trending/trending.component';
 import { UpcomingComponent } from './components/upcoming/upcoming.component';
 import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {
@@ -20,7 +21,10 @@ const routes: Routes = [
     path: 'upcoming', component: UpcomingComponent,
   },
   {
-    path: 'register', component: RegisterComponent
+    path: 'register', component: RegisterComponent,
+  },
+  {
+    path: 'login', component: LoginComponent,
   },
   {
     path: '**', redirectTo: 'main'
