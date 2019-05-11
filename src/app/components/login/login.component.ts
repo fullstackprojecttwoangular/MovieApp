@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
    }
    public users: Users = new Users(0,'','');
-   public userData: Users = new Users(0,'','');
+   public userData: UserLog = new UserLog('','');
   ngOnInit() {
   }
   
@@ -27,16 +27,23 @@ export class LoginComponent implements OnInit {
   //     );
   // }
 
-  public login(): void{
-    this.userService.login(this.users)
-    .subscribe();
-  }
-  
-  // login(username: string, password: string): void{
-  //   let userLog = {username: username, password: password};
-  //     this.userService.login(this.userLog)
-  //     .subscribe();
+  // public login(): void{
+  //   this.userService.login(this.users)
+  //   .subscribe();
+  //   this.router.navigate(['main']);
   // }
+  
+  login(username: string, password: string): void{
+     let userData = {username: username, password: password};
+      this.userService.verifyUser(userData)
+      .subscribe(response =>{
+      if(username == username && password == password){
+        localStorage.setItem("userId", JSON.stringify(response[0].userId));
+        localStorage.setItem()
+      this.router.navigate(['main']);
+      }
+    });
+  }
 
   // login(username: string, password: string): void {
   //   let UserLog = { username: username, password: password };
