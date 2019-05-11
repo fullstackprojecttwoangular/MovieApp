@@ -33,17 +33,27 @@ export class LoginComponent implements OnInit {
   //   this.router.navigate(['main']);
   // }
   
+  // login(username: string, password: string): void{
+  //   // let userLog = {username: username, password: password};
+  //     this.userService.login(username, password)
+  //     .subscribe();
+  //     if(username == username && password == password){
+  //     this.router.navigate(['main']);
+  //     }
+  // }
+
   login(username: string, password: string): void{
-     let userData = {username: username, password: password};
-      this.userService.verifyUser(userData)
-      .subscribe(response =>{
-      if(username == username && password == password){
-        localStorage.setItem("userId", JSON.stringify(response[0].userId));
-        localStorage.setItem()
-      this.router.navigate(['main']);
-      }
-    });
-  }
+    let userData = {username: username, password: password};
+     this.userService.verifyUser(userData)
+     .subscribe(response =>{
+     if(username == username && password == password){
+       localStorage.setItem("userId", JSON.stringify(response[0].userId));
+       localStorage.setItem("username", JSON.stringify(response[0].username));
+       localStorage.setItem("password", JSON.stringify(response[0].password));
+     this.router.navigate(['main']);
+     }
+   });
+ }
 
   // login(username: string, password: string): void {
   //   let UserLog = { username: username, password: password };

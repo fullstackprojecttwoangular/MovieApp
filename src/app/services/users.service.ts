@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import 'rxjs/add/operator/map/catch';
+import 'rxjs/add/operator/map';
 import { Users } from '../models/users';
 import {catchError } from 'rxjs/operators';
 
