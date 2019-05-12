@@ -4,7 +4,7 @@ import { Users } from '../../models/users';
 import { UserLog } from '../../models/user-log.model';
 import {Router} from '@angular/router';
 import { invalid } from '@angular/compiler/src/render3/view/util';
-import { Connection } from '@angular/http';
+import { Connection, Response } from '@angular/http';
 import { ConnectionService } from 'src/app/services/connection.service';
 import { unusedValueExportToPlacateAjd } from '@angular/core/src/render3/interfaces/injector';
 
@@ -19,28 +19,45 @@ export class LoginComponent implements OnInit {
   constructor(private userService: UsersService, private router: Router) {
 
    }
-   
+   sorry: boolean = false;
   userData = {username: '', password:''};
   userInput = {username: '', password:''};
   ngOnInit() {
   }
   
   public login(){
-    this.userService.verifyUser(this.userData)
-    .subscribe() 
+    let userData = {username: '', password:''};
+    this.userService.verifyUser(userData)
+    .subscribe(Response =>{
     console.log("Atempting")
+    let username: string = JSON.parse(Response.username);
+    let password: string = JSON.parse(Response.password);
     console.log(this.userInput);
-    if(true){
+    if(userData.username == username && userData.password == password){
       console.log("inside correct login");
       this.router.navigate(['favorite']);
     }
      else {
-      console.log("didnt work")
-      console.log(this.userData);
-      this.router.navigate(['login']);
+      this.sorry = true;
     }
+  }); 
   }
-
+  // public login(){
+  //   this.userService.verifyUser(this.userData)
+  //   .subscribe(Response =>{
+  //   console.log("Atempting")
+  //   console.log(this.userInput);
+  //   if(Response[0] != null){
+  //     console.log("inside correct login");
+  //     this.router.navigate(['favorite']);
+  //   }
+  //    else {
+  //     console.log("didnt work")
+  //     console.log(this.userData);
+  //     this.router.navigate(['login']);
+  //   }
+  // }); 
+  // }
 
 
   // public login(): void{

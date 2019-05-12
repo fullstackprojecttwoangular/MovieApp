@@ -37,10 +37,10 @@ export class UsersService {
   //           .post("http://localhost:8088/Project2MovieAPI/login", users);
   // }
 
-  // public verifyUser(userData: UserLog): Observable<boolean>{
+  // public verifyUser(UserLog: UserLog): Observable<boolean>{
   //   console.log("inside the user service")
   //   return this.http
-  //           .post<boolean>("http://localhost:8088/Project2MovieAPI/login", userData);
+  //           .post<boolean>("http://localhost:8088/Project2MovieAPI/login", UserLog);
   // }
 
   public verifyUser(userData: UserLog): Observable<Users>{
