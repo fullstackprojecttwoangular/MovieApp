@@ -22,26 +22,65 @@ export class LoginComponent implements OnInit {
    sorry: boolean = false;
   userData = {username: '', password:''};
   userInput = {username: '', password:''};
+  users: Users = new Users (0, '', '');
   ngOnInit() {
   }
   
-  public login(){
-    let userData = {username: '', password:''};
-    this.userService.verifyUser(userData)
-    .subscribe(Response =>{
-    console.log("Atempting")
-    let username: string = JSON.parse(Response.username);
-    let password: string = JSON.parse(Response.password);
-    console.log(this.userInput);
-    if(userData.username == username && userData.password == password){
-      console.log("inside correct login");
-      this.router.navigate(['favorite']);
-    }
-     else {
-      this.sorry = true;
-    }
-  }); 
-  }
+  // public login(){
+  //   let userData = {username: '', password:''};
+  //   this.userService.verifyUser(userData)
+  //   .subscribe(Response =>{
+  //   console.log("Atempting")
+  //   console.log(this.userInput);
+  //   //let database = JSON.parse(Response.Users);
+  //   console.log(Response);
+  //   console.log(this.userInput);
+  //   if(Response == this.userInput){
+  //     console.log("inside correct login");
+  //     this.router.navigate(['favorite']);
+  //   }
+  //    else {
+  //     this.sorry = true;
+  //   }
+  // }); 
+  // }
+//LATEST
+  // public login(){
+  //   let userData = {username: '', password:''};
+  //   this.userService.verifyUser(userData)
+  //   .subscribe(
+  //     data => this.users = data,
+  //     error => this.sorry = true,
+  //     () =>  this.router.navigate(['favorite']),
+  //   );  
+  // }
+  
+  // public login(){
+  //   let userData = {username: '', password:''};
+  //   this.userService.verifyUser(userData)
+  //   .subscribe(
+  //     data => this.users = data,
+  //     error => this.sorry = true,
+  //     () =>  this.router.navigate(['favorite'])
+  //   ); 
+  // }
+  // public login(){
+  //   let userData = {username: '', password:''};
+  //   this.userService.verifyUser(userData)
+  //   .subscribe(Response =>{
+  //   console.log("Atempting")
+  //   let username: string = JSON.parse(userData.username);
+  //   let password: string = JSON.parse(userData.password);
+  //   console.log(this.userInput);
+  //   if(userData.username == username && userData.password == password){
+  //     console.log("inside correct login");
+  //     this.router.navigate(['favorite']);
+  //   }
+  //    else {
+  //     this.sorry = true;
+  //   }
+  // }); 
+  // }
   // public login(){
   //   this.userService.verifyUser(this.userData)
   //   .subscribe(Response =>{
@@ -94,18 +133,24 @@ export class LoginComponent implements OnInit {
   //     }
   // }
 
-//   login(username: string, password: string): void{
-//     //let userData = {username: username, password: password};
-//      this.userService.verifyUser(this.users)
-//      .subscribe(response =>{
-//      if(username == username && password == password){
-//        localStorage.setItem("username", JSON.stringify(response[0].username));
-//        localStorage.setItem("password", JSON.stringify(response[0].password));
-//        localStorage.setItem("favoriteMovies", JSON.stringify(response[0].favoriteMovies));
-//      this.router.navigate(['favorite']);
-//      }
-//    });
-//  }
+  login(username: string, password: string): void{
+    let userData = {username: username, password: password};
+     this.userService.verifyUser(userData)
+     .subscribe(response =>{
+     if(response[0]){
+       localStorage.setItem("userId", JSON.stringify(response[0].userId))
+       localStorage.setItem("username", JSON.stringify(response[0].username));
+       localStorage.setItem("password", JSON.stringify(response[0].password));
+       localStorage.setItem("favoriteMovies", JSON.stringify(response[0].favoriteMovies));
+     this.router.navigate(['favorite']);
+     }
+     else{
+       console.log(response);
+       this.sorry= true;
+       this.router.navigate(['favorite']);
+     }
+   });
+ }
 
   // login(username: string, password: string): void {
   //   let UserLog = { username: username, password: password };

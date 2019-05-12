@@ -8,14 +8,14 @@
       <div class="list-group-item list-group-item-demo">
              <div class="form-group">
                <br><br>
-                  <input [(ngModel)]="userData.username"   placeholder="PlEASE ENTER USERNAME" class="form-control" />
+                  <input [(ngModel)]="userData.username"  [(ngModel)]="userInput.username" name="username" placeholder="PlEASE ENTER USERNAME" class="form-control" />
                   <br>
-                  <input [(ngModel)]="userData.password"  placeholder="PLEASE ENTER PASSWORD" 
+                  <input [(ngModel)]="userData.password" [(ngModel)]="userInput.password" name="password"  placeholder="PLEASE ENTER PASSWORD" 
                   type="password" class="form-control" />
                   <br><br><br>
              </div>
              <div>
-                 <button class="btn btn-primary btn-center" (click)="login()">Login</button>
+                 <button class="btn btn-primary btn-center" (click)="login(userInput.username, userInput.password)">Login</button>
              </div>
              <div class="row"  *ngIf="sorry" id="sorry">
               <div class="col-xs-8">

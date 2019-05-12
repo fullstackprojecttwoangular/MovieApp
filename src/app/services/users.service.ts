@@ -6,8 +6,9 @@ import { Users } from '../models/users';
 import {catchError } from 'rxjs/operators';
 
 import { UserLog } from '../models/user-log.model';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { error } from '@angular/compiler/src/util';
+import { invalid } from '@angular/compiler/src/render3/view/util';
 const TOKEN = 'TOKEN';
 @Injectable({
   providedIn: 'root'
@@ -43,9 +44,17 @@ export class UsersService {
   //           .post<boolean>("http://localhost:8088/Project2MovieAPI/login", UserLog);
   // }
 
+  
+//BEST
+  // public verifyUser(userData: UserLog): Observable<Users>{
+  //   return this.http
+  //           .post<Users>("http://localhost:8088/Project2MovieAPI/findUsername", userData);
+  // }
+
   public verifyUser(userData: UserLog): Observable<Users>{
     return this.http
-            .post<Users>("http://localhost:8088/Project2MovieAPI/findUsername", userData);
+            .post("http://localhost:8088/Project2MovieAPI/findUsername", userData)
+            .pipe(catchError(invalid => of(invalid)));
   }
 
   // public verifyUser(userData: UserLog){

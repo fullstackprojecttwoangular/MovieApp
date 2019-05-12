@@ -22,4 +22,8 @@ export class MovieService {
     return this.http.get<MoviesModel>(`${this.baseUrl}upcoming${this.apiKey}`).toPromise();
   }
 
+  getFavorite(): Promise<MoviesModel>{
+    return this.http.get<MoviesModel>("http://localhost:8088/Project2MovieAPI//favorite").toPromise();
+  }
+
 }

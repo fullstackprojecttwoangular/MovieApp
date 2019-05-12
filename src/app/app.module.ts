@@ -14,6 +14,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { UsersService } from './services/users.service';
 import { CustomInterceptor } from './session/custom-interceptor.session';
 import { LoginComponent } from './components/login/login.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { LoginComponent } from './components/login/login.component';
     TrendingComponent,
     UpcomingComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
