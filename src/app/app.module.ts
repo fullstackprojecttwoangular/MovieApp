@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'; 
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,13 @@ import { NavComponent } from './components/nav/nav.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { TrendingComponent } from './components/trending/trending.component';
 import { UpcomingComponent } from './components/upcoming/upcoming.component';
+import { RegisterComponent } from './components/register/register.component';
+import { UsersService } from './services/users.service';
+import { CustomInterceptor } from './session/custom-interceptor.session';
+import { LoginComponent } from './components/login/login.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+
 
 @NgModule({
   declarations: [
@@ -17,14 +25,23 @@ import { UpcomingComponent } from './components/upcoming/upcoming.component';
     NavComponent,
     FavoriteComponent,
     TrendingComponent,
-    UpcomingComponent
+    UpcomingComponent,
+    RegisterComponent,
+    LoginComponent,
+    ProfileComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule  
   ],
-  providers: [],
+  providers: [UsersService,{
+    provide: HTTP_INTERCEPTORS,
+    useClass: CustomInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
