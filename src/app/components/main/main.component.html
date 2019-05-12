@@ -9,7 +9,11 @@
     <div id="nowPlayingContainer" *ngFor="let movie of movieArr">
       <div id="addPadding" class="col-lg3 col-md-4 col-sm-4">
         <a (click)="redirectUrl(movie.id)" style="cursor: pointer">
-       
+          <img
+            alt="no_poster_image"
+            *ngIf="!movie.poster_path"
+            src="https://s3.amazonaws.com/project2-dt/no_poster_available.jpg"
+          />
           <img
             alt="movie_poster"
             *ngIf="movie.poster_path"
