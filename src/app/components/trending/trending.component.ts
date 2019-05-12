@@ -20,7 +20,6 @@ export class TrendingComponent implements OnInit {
   getPopular() {
     this.movieService.getPopular()
     .then((res) => {
-      console.log(res.results);
       this.movieArr = res.results;
     })
     .catch((e)=>console.log(e));

@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { MoviesDetail } from '../models/movieDetail';
 
 @Injectable({
   providedIn: "root"
@@ -20,6 +21,10 @@ export class MovieService {
 
   getUpcoming(): Promise<MoviesModel>{
     return this.http.get<MoviesModel>(`${this.baseUrl}upcoming${this.apiKey}`).toPromise();
+  }
+
+  getMovieDetail(): Promise<MoviesDetail>{
+    return this.http.get<MoviesDetail>(`${this.baseUrl}${localStorage.getItem("movieId")}${this.apiKey}`).toPromise();
   }
 
 }

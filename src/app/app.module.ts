@@ -13,6 +13,7 @@ import { UpcomingComponent } from './components/upcoming/upcoming.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UsersService } from './services/users.service';
 import { CustomInterceptor } from './session/custom-interceptor.session';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { CustomInterceptor } from './session/custom-interceptor.session';
     FavoriteComponent,
     TrendingComponent,
     UpcomingComponent,
-    RegisterComponent
+    RegisterComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
