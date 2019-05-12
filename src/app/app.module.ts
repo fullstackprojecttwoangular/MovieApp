@@ -6,12 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { NavComponent } from './components/nav/nav.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
+import { TrendingComponent } from './components/trending/trending.component';
+import { UpcomingComponent } from './components/upcoming/upcoming.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    NavComponent
+    NavComponent,
+    FavoriteComponent,
+    TrendingComponent,
+    UpcomingComponent
   ],
   imports: [
     BrowserModule,

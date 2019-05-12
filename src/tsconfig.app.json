@@ -1,8 +1,10 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../out-tsc/app",
-    "types": []
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "amd",
+    "target": "ES6"
   },
   "exclude": [
     "test.ts",
