@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { MoviesDetail } from '../models/movieDetail';
 
+import { MOVIE_URL } from '../../environments/environment';
 @Injectable({
   providedIn: "root"
 })
@@ -27,7 +28,7 @@ export class MovieService {
     return this.http.get<MoviesDetail>(`${this.baseUrl}${localStorage.getItem("movieId")}${this.apiKey}`).toPromise();
   }
     getFavorite(): Promise<MoviesModel>{
-      return this.http.get<MoviesModel>("http://localhost:8088/Project2MovieAPI//favorite").toPromise();
+      return this.http.get<MoviesModel>(`${MOVIE_URL}/myFavorites`).toPromise();
 
   }
 
