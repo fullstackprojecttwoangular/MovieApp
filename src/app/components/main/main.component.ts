@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { MovieService } from "src/app/services/movie.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-main",
@@ -7,7 +8,7 @@ import { MovieService } from "src/app/services/movie.service";
   styleUrls: ["./main.component.css"]
 })
 export class MainComponent implements OnInit {
-  constructor(private movieService: MovieService) {}
+  constructor(private movieService: MovieService, private route: Router) {}
 
   ngOnInit() {
     this.getNowPlaying();
@@ -19,9 +20,14 @@ export class MainComponent implements OnInit {
   getNowPlaying() {
     this.movieService.getNowPlaying()
     .then((res) => {
-      console.log(res.results);
       this.movieArr = res.results;
     })
     .catch((e)=>console.log(e));
   }
+
+  redirectUrl(id: string) {
+    localStorage.setItem("movieId", id);
+    this.route.navigateByUrl("/movie-detail");
+  }
+  
 }

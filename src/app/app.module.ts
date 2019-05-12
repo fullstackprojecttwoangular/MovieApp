@@ -15,6 +15,7 @@ import { UsersService } from './services/users.service';
 import { CustomInterceptor } from './session/custom-interceptor.session';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     UpcomingComponent,
     RegisterComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
