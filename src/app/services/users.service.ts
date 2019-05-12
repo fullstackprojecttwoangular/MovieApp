@@ -32,6 +32,25 @@ export class UsersService {
             .post("http://localhost:8088/Project2MovieAPI/register", users);
   }
 
+  // public verifyUser(users: Users){
+  //   return this.http
+  //           .post("http://localhost:8088/Project2MovieAPI/login", users);
+  // }
+
+  public verifyUser(userData: UserLog): Observable<boolean>{
+    return this.http
+            .post<boolean>("http://localhost:8088/Project2MovieAPI/login", userData);
+  }
+
+  // public verifyUser(userData: UserLog){
+  //   return this.http
+  //           .post("http://localhost:8088/Project2MovieAPI/login", userData);
+  // }
+
+  // verifyUser(username: string, password: string): Observable<Users>{
+  //   return this.http.post<Users>("http://localhost:8088/Project2MovieAPI/login", {username: username, password: password});
+  // }
+
 //  public login(users: Users): Observable<Users>{
 //    return this.http
 //               .post("http://localhost:8088/Project2MovieAPI/findUser", users)
@@ -39,9 +58,9 @@ export class UsersService {
               
 //  }
 
-verifyUser (users: UserLog): Observable<Users> { 
-  return this.http.post<Users>("http://localhost:8088/Project2MovieAPI/findUser", Users );
-}
+// verifyUser (users: UserLog): Observable<Users> { 
+//   return this.http.post<Users>("http://localhost:8088/Project2MovieAPI/login", Users );
+// }
 
   // public login(username:string, password:string){
 
@@ -65,7 +84,8 @@ verifyUser (users: UserLog): Observable<Users> {
   //   return this.http.post<Users>(this.try, UserLog );
   // }
 
-  // public login(users: Users): Observable<Users>{
+  // public verifyUser(users: Users){
+  //   public login(users: Users): Observable<Users>{
   //   return this.http
   //           .post("http://localhost:8088/Project2MovieAPI/findUser", users);
   // }
