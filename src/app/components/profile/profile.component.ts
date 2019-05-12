@@ -22,4 +22,9 @@ export class ProfileComponent implements OnInit {
      
   }
 
+  redirectUrl(id: string) {
+    localStorage.setItem("movieId", id);
+    this.router.navigateByUrl("/movie-detail");
+  }
+
 }
