@@ -8,6 +8,7 @@
   <div class="row text-center">
     <div id="nowPlayingContainer" *ngFor="let movie of movieArr">
         <div id="addPadding" class="col-lg3 col-md-4 col-sm-4">
+            <a (click)="redirectUrl(movie.id)" style="cursor: pointer">
         <img
           alt="no_poster_image"
           *ngIf="!movie.poster_path"
@@ -26,6 +27,7 @@
         <h1 class="text-muted text-center mb-3" id="mTitle">
           {{ movie.release_date }}
         </h1>
+        </a>
       </div>
     </div>
   </div>
