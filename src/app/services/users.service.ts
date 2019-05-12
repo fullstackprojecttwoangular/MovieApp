@@ -37,11 +37,21 @@ export class UsersService {
   //           .post("http://localhost:8088/Project2MovieAPI/login", users);
   // }
 
-  public verifyUser(userData: UserLog): Observable<boolean>{
+  // public verifyUser(userData: UserLog): Observable<boolean>{
+  //   console.log("inside the user service")
+  //   return this.http
+  //           .post<boolean>("http://localhost:8088/Project2MovieAPI/login", userData);
+  // }
+
+  public verifyUser(userData: UserLog): Observable<Users>{
     return this.http
-            .post<boolean>("http://localhost:8088/Project2MovieAPI/login", userData);
+            .post<Users>("http://localhost:8088/Project2MovieAPI/findUsername", userData);
   }
 
+  // public verifyUser(userData: UserLog){
+  //   return this.http
+  //           .post("http://localhost:8088/Project2MovieAPI/findUsername", userData);
+  // }
   // public verifyUser(userData: UserLog){
   //   return this.http
   //           .post("http://localhost:8088/Project2MovieAPI/login", userData);

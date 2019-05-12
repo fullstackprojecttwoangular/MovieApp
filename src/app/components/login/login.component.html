@@ -8,9 +8,9 @@
       <div class="list-group-item list-group-item-demo">
              <div class="form-group">
                <br><br>
-                  <input [(ngModel)]="userData.username" placeholder="PlEASE ENTER USERNAME" class="form-control" />
+                  <input [(ngModel)]="userData.username"  [(ngModel)]="userInput.username" placeholder="PlEASE ENTER USERNAME" class="form-control" />
                   <br>
-                  <input [(ngModel)]="userData.password" placeholder="PLEASE ENTER PASSWORD" 
+                  <input [(ngModel)]="userData.password" [(ngModel)]="userInput.password"  placeholder="PLEASE ENTER PASSWORD" 
                   type="password" class="form-control" />
                   <br><br><br>
              </div>

@@ -5,7 +5,6 @@ import { UserLog } from '../../models/user-log.model';
 import {Router} from '@angular/router';
 import { invalid } from '@angular/compiler/src/render3/view/util';
 import { Connection } from '@angular/http';
-import { connect } from 'net';
 import { ConnectionService } from 'src/app/services/connection.service';
 import { unusedValueExportToPlacateAjd } from '@angular/core/src/render3/interfaces/injector';
 
@@ -22,19 +21,23 @@ export class LoginComponent implements OnInit {
    }
    
   userData = {username: '', password:''};
-  public userInput = this.userData;
+  userInput = {username: '', password:''};
   ngOnInit() {
   }
   
   public login(){
     this.userService.verifyUser(this.userData)
     .subscribe() 
-    if(false){
-      this.router.navigate(['login']);
-    }
-     else if(true) {
-      
+    console.log("Atempting")
+    console.log(this.userInput);
+    if(true){
+      console.log("inside correct login");
       this.router.navigate(['favorite']);
+    }
+     else {
+      console.log("didnt work")
+      console.log(this.userData);
+      this.router.navigate(['login']);
     }
   }
 
