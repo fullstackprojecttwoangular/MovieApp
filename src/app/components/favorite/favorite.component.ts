@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieService } from "src/app/services/movie.service";
+
 
 @Component({
   selector: 'app-favorite',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoriteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private movieService: MovieService) { }
 
   ngOnInit() {
+    this.getFavorites();
   }
 
+  movieArr: Object[] = [];
+  imgUrl: string = "http://localhost:8088/Project2MovieAPI/favorites";
+
+  getFavorites(){
+    this.movieService.getFavorites()
+    .then((res) => {
+      console.log(res.reesults);
+      this.movieArr = res.reesults;
+    })
+    .catch((e)=> console.log(e));
+  }
 }

@@ -24,6 +24,6 @@ export class TrendingComponent implements OnInit {
       this.movieArr = res.results;
     })
     .catch((e)=>console.log(e));
-  }
+  } 
 
 }
