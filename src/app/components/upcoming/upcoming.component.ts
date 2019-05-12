@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../../services/movie.service';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-upcoming',
   templateUrl: './upcoming.component.html',
@@ -30,5 +29,4 @@ export class UpcomingComponent implements OnInit {
     localStorage.setItem("movieId", id);
     this.route.navigateByUrl("/movie-detail");
   }
-
 }

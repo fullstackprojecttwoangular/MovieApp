@@ -30,5 +30,4 @@ export class TrendingComponent implements OnInit {
     localStorage.setItem("movieId", id);
     this.route.navigateByUrl("/movie-detail");
   }
-
 }

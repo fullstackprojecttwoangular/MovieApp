@@ -6,6 +6,7 @@ import { TrendingComponent } from './components/trending/trending.component';
 import { UpcomingComponent } from './components/upcoming/upcoming.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 
@@ -33,6 +34,9 @@ const routes: Routes = [
   },
   {
     path: 'movie-detail', component: MovieDetailComponent,
+  },
+  {
+    path: 'logout', component: LogoutComponent,
   },
   {
     path: '**', redirectTo: 'main'
