@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Users } from '../models/users';
 import {catchError } from 'rxjs/operators';
-
+import { MOVIE_URL} from '../../environments/environment';
 import { UserLog } from '../models/user-log.model';
 import { Observable, of } from 'rxjs';
 import { error } from '@angular/compiler/src/util';
@@ -30,7 +30,7 @@ export class UsersService {
 
   public registerUser(users: Users){
     return this.http
-            .post("http://localhost:8088/Project2MovieAPI/register", users);
+            .post(`${MOVIE_URL}/findUsername/register`, users);
   }
 
   // public verifyUser(users: Users){
@@ -44,7 +44,7 @@ export class UsersService {
   //           .post<boolean>("http://localhost:8088/Project2MovieAPI/login", UserLog);
   // }
 
-  
+
 //BEST
   // public verifyUser(userData: UserLog): Observable<Users>{
   //   return this.http
@@ -53,7 +53,7 @@ export class UsersService {
 
   public verifyUser(userData: UserLog): Observable<Users>{
     return this.http
-            .post("http://localhost:8088/Project2MovieAPI/findUsername", userData)
+            .post(`${MOVIE_URL}/findUsername`, userData)
             .pipe(catchError(invalid => of(invalid)));
   }
 
