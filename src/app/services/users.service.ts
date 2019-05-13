@@ -4,7 +4,6 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Users } from '../models/users';
 import {catchError } from 'rxjs/operators';
-
 import { UserLog } from '../models/user-log.model';
 import { Observable, of } from 'rxjs';
 import { error } from '@angular/compiler/src/util';
