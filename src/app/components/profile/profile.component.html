@@ -1,3 +1,34 @@
-<p>
-  profile works!
-</p>
+<div class="jumbotron text-center">
+    <h1>The Movie Center</h1>
+    <h2 class="text-muted text-center mb-3" id="mTitle">
+        {{ users.username }}
+      </h2>
+  </div>
+  <div id="home" class="container">
+    <h1 id="title" class="text-muted text-center mb-3">Now Playing</h1>
+    <br />
+    <div class="row text-center">
+      <div id="nowPlayingContainer" *ngFor="let movie of movieArr">
+        <div id="addPadding" class="col-lg3 col-md-4 col-sm-4">
+          <a (click)="redirectUrl(movie.id)" style="cursor: pointer">
+         
+            <img
+              alt="movie_poster"
+              *ngIf="movie.poster_path"
+              src="{{ imgUrl }}{{ movie.poster_path }}"
+            />
+            <h1 class="text-muted text-center mb-3" id="mTitle">
+              {{ movie.title }}
+            </h1>
+            <h1 class="text-muted text-center mb-3" id="mTitle">
+              {{ movie.release_date }}
+            </h1>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="text-center">
+    <h3>&copy; Java EE March 4 2019</h3>
+  </footer>
+  

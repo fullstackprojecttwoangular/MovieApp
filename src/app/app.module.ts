@@ -16,6 +16,7 @@ import { CustomInterceptor } from './session/custom-interceptor.session';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
