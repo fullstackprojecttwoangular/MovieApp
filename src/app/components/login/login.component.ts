@@ -36,12 +36,12 @@ export class LoginComponent implements OnInit {
        sessionStorage.setItem("username", JSON.stringify(response[0].username));
        sessionStorage.setItem("password", JSON.stringify(response[0].password));
        sessionStorage.setItem("favoriteMovies", JSON.stringify(response[0].favoriteMovies));
-     this.router.navigate(['favorite']);
+     this.router.navigate(['main']);
      }
      else{
        console.log(response);
        this.sorry= true;
-       this.router.navigate(['favorite']);
+       this.router.navigate(['login']);
      }
    });
  }
