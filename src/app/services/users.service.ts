@@ -29,14 +29,16 @@ export class UsersService {
 
   public registerUser(users: Users){
     return this.http
-            .post("http://localhost:8088/Project2MovieAPI/register", users);
+      .post("ec2-18-216-112-251.us-east-2.compute.amazonaws.com/register", users);
   }
+
+  
 
  
 
   public verifyUser(userData: UserLog): Observable<Users>{
     return this.http
-            .post("http://localhost:8088/Project2MovieAPI/findUsername", userData)
+      .post("ec2-18-216-112-251.us-east-2.compute.amazonaws.com/findUsername", userData)
             .pipe(catchError(invalid => of(invalid)));
   }
 

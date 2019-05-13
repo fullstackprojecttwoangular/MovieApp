@@ -27,7 +27,11 @@ export class MovieService {
     return this.http.get<MoviesDetail>(`${this.baseUrl}${localStorage.getItem("movieId")}${this.apiKey}`).toPromise();
   }
     getFavorite(): Promise<MoviesModel>{
-      return this.http.get<MoviesModel>("http://localhost:8088/Project2MovieAPI/myFavorites").toPromise();
+      return this.http
+        .get<MoviesModel>(
+          "ec2-18-216-112-251.us-east-2.compute.amazonaws.com/myFavorites"
+        )
+        .toPromise();
 
   }
 
