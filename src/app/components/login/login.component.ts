@@ -32,10 +32,10 @@ export class LoginComponent implements OnInit {
      this.userService.verifyUser(userData)
      .subscribe(response =>{
      if(response[0]){
-       localStorage.setItem("userId", JSON.stringify(response[0].userId))
-       localStorage.setItem("username", JSON.stringify(response[0].username));
-       localStorage.setItem("password", JSON.stringify(response[0].password));
-       localStorage.setItem("favoriteMovies", JSON.stringify(response[0].favoriteMovies));
+       sessionStorage.setItem("userId", JSON.stringify(response[0].userId))
+       sessionStorage.setItem("username", JSON.stringify(response[0].username));
+       sessionStorage.setItem("password", JSON.stringify(response[0].password));
+       sessionStorage.setItem("favoriteMovies", JSON.stringify(response[0].favoriteMovies));
      this.router.navigate(['favorite']);
      }
      else{
