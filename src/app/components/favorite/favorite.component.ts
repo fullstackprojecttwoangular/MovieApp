@@ -13,7 +13,7 @@ export class FavoriteComponent implements OnInit {
   movieArr: Object[] = [];
   imgUrl: string = "ec2-18-216-112-251.us-east-2.compute.amazonaws.com";
   getFavorites(){
-    this.movieService.getFavorites()
+    this.movieService.getFavorite()
     .then((res) => {
       console.log(res.results);
       this.movieArr = res.results;
